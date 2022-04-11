@@ -1,6 +1,6 @@
 # ECG-VFonset-Extractor
 
-This code slices samples from the WFDB database and slices it into a smaller segment close to the VFOnset time. It then creates a new file with only the cut segment.
+This code takes samples from the WFDB database and slices it into a smaller segment close to the VFOnset time. It then creates a new file with only the cut segment.
 
 # Future implementations
 
