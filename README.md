@@ -10,4 +10,4 @@ Future implementations include:
 
 *Allowing for GUI/better console to allow users to input desired database, sampling direction (starting with or ending with the VFOnset), and sample length.
 
-*Placing the XQRS results into a readable file instead of a just console outputs.
+*Placing the XQRS results into a readable file instead of just console outputs.
