@@ -8,6 +8,6 @@ Future implementations include:
 
 *Allowing users to connect to the WFDB and utilize files on that database instead of having to manually download the files.
 
-*Allowing for GUI/better console to allow users to input desired database, sampling direction (starting with or ending with the VFOnset), and sample length.
+*Allowing for GUI/better console to allow users to input desired database, sampling direction (starting with or ending with the VFOnset), timesacle, and sample length.
 
 *Placing the XQRS results into a readable file instead of just console outputs.
