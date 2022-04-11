@@ -3,7 +3,6 @@ import wfdb
 import os.path
 from wfdb import processing, show_ann_labels
 from IPython.display import display
-import scipy.stats
 
 #1 SECOND == 250 TIMEUNITS
 #sampfrom=10000
