@@ -9,6 +9,8 @@ import scipy.stats
 #sampfrom=10000
 i = 30
 while i < 53:
+    #bypass samples 40, 42, 50: have no VFOnset
+    #FUTURE: add error statement instead of manually bypassing problematic files
     if i == 40:
         i = 41
     elif i == 42:
@@ -60,11 +62,6 @@ while i < 53:
     vfrecord = wfdb.io.rdrecord(recordNum, sampfrom=vfonTime, sampto=vfoffTime)
     vfann = wfdb.rdann(recordNum, annType, sampfrom=vfonTime, sampto=vfoffTime)
 
-    #sig, fields = wfdb.rdsamp(recordNum, sampfrom=vfonTime, sampto=vfoffTime, channels=[0, 1])
-    #wfdb.wrsamp('ecg-record', fs=250, units=['mV', 'mV'], sig_name=['I', 'II'], p_signal=sig, fmt=['16', '16'])
-    #cutRecord = wfdb.rdrecord('ecg-record')
-    #wfdb.plot_wfdb(cutRecord)
-
     #Create new cut file and run xqrs on it
     sig, fields = wfdb.rdsamp(recordNum, sampfrom=vfonTime, sampto=vfoffTime)
     newrecordNum = str(i)+'new'
@@ -72,9 +69,5 @@ while i < 53:
     xqrs = processing.XQRS(sig=sig[:, 0], fs=fields['fs'])
     xqrs.detect()
     display(xqrs.__dict__)
-    #wfdb.plot_items(signal=sig, ann_samp=[xqrs.qrs_inds])
-
-    #numpy.savetxt("foo.csv", array, delimiter=",")
 
     i = i+1
-    #wfdb.plot_wfdb(vfrecord)
